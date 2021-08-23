@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dasboard</title>
+    <style>
+        #addItems {
+            display: none;
+        }
+    </style>
+
+    <!-- bootraps -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+    <!-- fontAewsome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+</head>
+
+
+<body onload="getTodos()">
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dashboard
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" style="cursor: pointer;">Add Items</a>
+                      <li><a class="dropdown-item" onclick="getTodos()" style="cursor: pointer;">Show Items</a>
+                    </li>
+                    </ul>
+                  </li>
+            </ul>
+            <form class="d-flex">
+                <i class="fas fa-user-tie mx-3 fs-2 my-1"></i>
+                <h4 class="my-1"> Welcome <span id="username"></span></h4>
+                <button class="btn btn-outline-success mx-3" onclick=" return logout()"> LOG OUT</button>
+
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div class="mb-3" id="addItem">
+
+        <input type="email" class="form-control" id="itemName" style="margin-top: 5px; width:
+                50%;" placeholder="Item Name">
+        <input type="email" class="form-control" id="price" style="margin-top: 5px; width: 50%;" placeholder="Price">
+        <input type="email" class="form-control" id="category" style="margin-top: 5px; width:
+                50%;" placeholder="Category">
+        <input type="email" class="form-control" id="delivery" style="margin-top: 5px; width:
+                50%;" placeholder="Delivery
+                type">
+        <input type="file" class="form-control my-3" id="imageFile" style="margin-top: 5px; width:
+                50%;" placeholder="Enter Todo">
+        <button onclick="addItem(event)" class="btn
+                btn-primary my-3" style="margin-top: 5px;"> ADD
+                ITEMS</button>
+    </div>
+    <div class="cbox container" id="addedItems">
+      <div class="row"></div>
+     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+         <!-- https://firebase.google.com/docs/web/setup#available-libraries -->
+    
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCpEL2EcdCz8CU0JQfS3RwCrtcY1nb2jL4",
+        authDomain: "sampleapp-ca14f.firebaseapp.com",
+        projectId: "sampleapp-ca14f",
+        storageBucket: "sampleapp-ca14f.appspot.com",
+        messagingSenderId: "492716693860",
+        appId: "1:492716693860:web:44108172f634a9c7a24271"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+
+
+
+</body>
+<!-- js -->
+<script src="dashboard.js"></script>
+
+</html>
