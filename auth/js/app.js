@@ -85,15 +85,11 @@ function checkUserFullName() {
     var userPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;
   
     // var checkUserFullNameValid = userFullName.match(userFullNameFormate);
-    var checkUserEmailValid = userEmail.match(userEmailFormate);
-    var checkUserPasswordValid = userPassword.match(userPasswordFormate);
-  
+    var checkUserEmailValid = userEmail.match(userEmailFormate); 
    
    
     if (checkUserEmailValid == null) {
-      return checkUserEmail();
-    } else if (checkUserPasswordValid == null) {
-      return checkUserPassword();
+      return checkUserEmail(); 
     } else {
       // let username = document.getElementById("username").value;
       // let email = document.getElementById("email").value;
@@ -199,12 +195,9 @@ function checkUserFullName() {
     var userSIPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;
   
     var checkUserEmailValid = userSIEmail.match(userSIEmailFormate);
-    var checkUserPasswordValid = userSIPassword.match(userSIPasswordFormate);
   
     if (checkUserEmailValid == null) {
       return checkUserSIEmail();
-    } else if (checkUserPasswordValid == null) {
-      return checkUserSIPassword();
     } else {
       const userData = {
         userSIEmail,
